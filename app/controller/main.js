@@ -82,11 +82,11 @@ Ext.define('realPneus.controller.main', {
     },
     sincronizar: function () {
 	this.apagarClientesSincronizar();
-//	this.sincronizarClientes();
-	//this.apagarPneusSincronizar();
-	//this.sincronizarPneus();
-	//this.apagarServicoSincronizar();
-	//this.sincronizarServico();
+	this.sincronizarClientes();
+	this.apagarPneusSincronizar();
+	this.sincronizarPneus();
+	this.apagarServicoSincronizar();
+	this.sincronizarServico();
     },
     apagarClientesSincronizar: function () {
 	var db = openDatabase("realPneus", "1.0", "", 200000);
@@ -94,7 +94,6 @@ Ext.define('realPneus.controller.main', {
 	function apaga(tx) {
 	    tx.executeSql('DELETE FROM clientes');
 	}
-	this.sincronizarClientes();
     },
     sincronizarClientes: function () {
 	var j = 0;
@@ -118,7 +117,6 @@ Ext.define('realPneus.controller.main', {
 	    j++;
 	});
 	store2.sync();
-	this.apagarPneusSincronizar();
     },
     apagarPneusSincronizar: function () {
 	var db = openDatabase("realPneus", "1.0", "", 200000);
@@ -126,7 +124,6 @@ Ext.define('realPneus.controller.main', {
 	function apaga(tx) {
 	    tx.executeSql('DELETE FROM pneus');
 	}
-	this.sincronizarPneus();
     },
     sincronizarPneus: function () {
 	var j = 0;
@@ -146,7 +143,6 @@ Ext.define('realPneus.controller.main', {
 	    j++;
 	});
 	store2.sync();
-	this.apagarServicoSincronizar();
     },
     apagarServicoSincronizar: function () {
 	var db = openDatabase("realPneus", "1.0", "", 200000);
@@ -154,7 +150,6 @@ Ext.define('realPneus.controller.main', {
 	function apaga(tx) {
 	    tx.executeSql('DELETE FROM servico');
 	}
-	this.sincronizarServico();
     },
     sincronizarServico: function () {
 	var j = 0;
