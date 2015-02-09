@@ -15,9 +15,9 @@ Ext.define('realPneus.store.sincronizarPneusStore', {
 	    type: 'ajax',
 	    //url: 'php/json/listaContatos.php',
 	    api: {
-		//read : 'app/php/listaPneu.php',
+		read : 'http://192.168.111.112/php/listaPneu.php',
 		create: 'app/php/vazio.php', //CRUD
-		read: 'app/php/listaPneus.php',
+		//read: 'app/php/listaPneus.php',
 		update: 'app/php/vazio.php',
 		destroy: 'app/php/vazio.php'
 	    },
